@@ -21,29 +21,49 @@
 # **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да    
 #     **Вывод:** Парам пам-пам  
 
-stix = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
-stix = stix.upper()
-kol_gl = []
-count = 0
-for i in range(len(stix)):
-    if stix[i] != ' ':
-        if stix[i] in 'АУОЫИЭЯЮЁЕ':
-            count +=1
-    else:
-        kol_gl.append(count)
-        count = 0
-kol_gl.append(count)
-summ = 0
-for i in range(len(kol_gl)):
-    summ += kol_gl[i]
-if summ // len(kol_gl) == kol_gl[0]:
-    print('Парам пам-пам')
-else:
-    print('Пам парам')
+# stix = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
+# stix = stix.upper()
+# kol_gl = []
+# count = 0
+# for i in range(len(stix)):
+#     if stix[i] != ' ':
+#         if stix[i] in 'АУОЫИЭЯЮЁЕ':
+#             count +=1
+#     else:
+#         kol_gl.append(count)
+#         count = 0
+# kol_gl.append(count)
+# summ = 0
+# for i in range(len(kol_gl)):
+#     summ += kol_gl[i]
+# if summ // len(kol_gl) == kol_gl[0]:
+#     print('Парам пам-пам')
+# else:
+#     print('Пам парам')
 
+# Задача 36: 
 
+# Напишите функцию print_operation_table(operation, 
+# num_rows=6, num_columns=6),
+# которая принимает в качестве аргумента функцию, 
+# вычисляющую элемент по номеру строки и
+# столбца. Аргументы num_rows и num_columns указывают число строк 
+# и столбцов таблицы,которые должны быть распечатаны. 
+# Нумерация строк и столбцов идет с единицы (подумайте,
+# почему не с нуля). 
+# Примечание: бинарной операцией называется любая операция, 
+# у которой ровно два аргумента, как, например, у операции умножения.
 
+# print_operation_table(lambda x, y: x * y) 
 
+def print_operation_table(x, y):
+    tabl_strok = [i for i in range(1, x+1)]
+    tabl_stolb = [i for i in range(1, y+1)]
+    for i in range(len(tabl_stolb)):
+        for y in range(len(tabl_strok)):
+            print(tabl_stolb[i] * tabl_strok[y], end=' ')
+        print()
 
-
-# print(list(filter(lambda x: True if x%2==0 else False,a)))
+num_rows = int(input('Количество строк: '))
+num_columns = int(input('Количество столбцов: '))
+print_operation_table(num_rows, num_columns)
