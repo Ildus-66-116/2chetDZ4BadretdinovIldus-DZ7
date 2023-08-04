@@ -61,9 +61,9 @@ def print_operation_table(x, y):
     tabl_stolb = [i for i in range(1, y+1)]
     for i in range(len(tabl_stolb)):
         for y in range(len(tabl_strok)):
-            print(tabl_stolb[i] * tabl_strok[y], end=' ')
+            print(f'\t{tabl_stolb[i] * tabl_strok[y]}', end=' ')
         print()
 
 num_rows = int(input('Количество строк: '))
 num_columns = int(input('Количество столбцов: '))
-print_operation_table(num_rows, num_columns)
+print_operation_table(num_columns, num_rows)
